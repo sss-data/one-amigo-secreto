@@ -16,9 +16,13 @@ function adicionarAmigo() {
 
 // função sortear amigo
 function sortearAmigo() {
-    if (listaAmigos.length < 2) {
-        alert('Não há amigos suficientes para o sorteio.');
-        return
+    let listaNaTela = document.getElementById('listaAmigos');
+    console.log(listaNaTela);
+    console.log(listaAmigos.length);
+    console.log(listaNaTela.children.length);
+    if (listaAmigos.length < 1 && listaNaTela.children.length === 0) {
+        alert('Informe amigos para o sorteio.');
+        return;
     }
     let indice = gerarNumeroAleatorio(); // guarda índice em uma variável
     let amigoSorteado = listaAmigos[indice]; //sorteia pelo índice
@@ -32,10 +36,10 @@ function sortearAmigo() {
 
 // gerar número aleatório
 function gerarNumeroAleatorio() {
-    if (listaAmigos.length < 1) {
+    if (listaAmigos.length < 1) { // listaAmigos = []
         alert('Todos os amigos já foram sorteados.');
     } else {
-        let indiceLista = Math.floor(Math.random() * listaAmigos.length);
+        let indiceLista = Math.floor(Math.random() * listaAmigos.length); // [0, 1, 2 ...]
         return indiceLista;
     }
 }
@@ -57,8 +61,7 @@ function validaNome(nome) {
     const nomeLimpo = nome.trim();
 
     // verifica se está vazio
-    if (!nomeLimpo
-         || nomeLimpo.length < 2) {
+    if (!nomeLimpo || nomeLimpo.length < 2) {
         return false;
     }
 
@@ -84,4 +87,11 @@ function sorteadoNaTela(sorteado) {
     const sorteadoHTML = document.getElementById('resultado');
     sorteadoHTML.innerHTML = sorteado;
     return sorteado;
+}
+
+function reiniciar() {
+    listaAmigos = [];
+    document.getElementById('listaAmigos').innerHTML = '';
+    document.getElementById('resultado').innerHTML = '';
+    console.log('O jogo foi reiniciado e todas as variáveis foram limpas!');
 }

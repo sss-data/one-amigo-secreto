@@ -88,6 +88,8 @@ body {
 }
 
 .button-container {
+    display: flex;
+    gap: 30px;
     width: 300px;
     justify-content: center;
 }

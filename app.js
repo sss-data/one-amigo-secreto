@@ -24,6 +24,13 @@ function sortearAmigo() {
         alert('Informe amigos para o sorteio.');
         return;
     }
+
+    if (listaAmigos.length < 1) {
+        alert('Todos os amigos já foram sorteados.');
+        document.getElementById('resultado').innerHTML = '';    
+        return;
+    }
+
     let indice = gerarNumeroAleatorio(); // guarda índice em uma variável
     let amigoSorteado = listaAmigos[indice]; //sorteia pelo índice
     listaAmigos.splice(indice,1); // retira da lista
@@ -36,12 +43,8 @@ function sortearAmigo() {
 
 // gerar número aleatório
 function gerarNumeroAleatorio() {
-    if (listaAmigos.length < 1) { // listaAmigos = []
-        alert('Todos os amigos já foram sorteados.');
-    } else {
-        let indiceLista = Math.floor(Math.random() * listaAmigos.length); // [0, 1, 2 ...]
-        return indiceLista;
-    }
+    let indiceLista = Math.floor(Math.random() * listaAmigos.length); // [0, 1, 2 ...]
+    return indiceLista;
 }
 
 // função para limpar campo de nomes

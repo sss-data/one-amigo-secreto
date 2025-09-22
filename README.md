@@ -27,11 +27,6 @@ O projeto é um sorteador baseado no estilo **amigo secreto** ou **amigo oculto*
 
 Nenhum! Apenas um navegador web moderno.
 
-## 🌟 Próximas Melhorias (Opcional)
-
--   [ ] Identificar a pessoa que está sorteando.
--   [ ] Impedir que uma pessoa sorteie a si mesma.
-
 ---
 
 Feito com ❤️.

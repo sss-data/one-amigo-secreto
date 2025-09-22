@@ -7,7 +7,7 @@ function adicionarAmigo() {
     if (validaNome(nome)){ // função de validação
         listaAmigos.push(nome.trim());
     } else {
-        alert('Por favor, insira um nome.')
+        alert('Por favor, insira um nome válido sem caracteres especiais.')
     }
     amigosNaTela();
     limparNome();
